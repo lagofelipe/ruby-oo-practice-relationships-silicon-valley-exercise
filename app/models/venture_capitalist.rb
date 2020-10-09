@@ -18,6 +18,10 @@ class VentureCapitalist
         self.all.select{ |vc| vc.total_worth > 1000000000 }
     end
 
+    def in_club
+        result = self.total_worth > 1000000000 ? true : false
+    end
+
     def offer_contract(startup, type, investment )
         FundingRound.new(startup, self, type, investment)
     end
